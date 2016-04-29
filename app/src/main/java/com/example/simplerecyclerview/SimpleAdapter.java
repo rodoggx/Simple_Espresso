@@ -26,6 +26,8 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder
             super(itemView);
             textViewName = (TextView) itemView.findViewById(R.id.r_item_text);
 
+            //Easy way to set onClickListener to an item of the RecyclerView
+            //For optimal way check: http://stackoverflow.com/questions/24471109/recyclerview-onclick
             textViewName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
