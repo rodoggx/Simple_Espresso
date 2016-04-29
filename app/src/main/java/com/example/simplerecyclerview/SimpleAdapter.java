@@ -1,5 +1,7 @@
 package com.example.simplerecyclerview;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,19 +16,29 @@ import java.util.ArrayList;
 public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {
 
     private ArrayList<String> mArrayList;
+    private MainActivity mMainActivity;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         public final TextView textViewName;
 
         public ViewHolder(View itemView) {
             super(itemView);
             textViewName = (TextView) itemView.findViewById(R.id.r_item_text);
+
+            textViewName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    TextView textView = (TextView) mMainActivity.findViewById(R.id.a_main_text);
+                    textView.setText(textViewName.getText());
+                }
+            });
         }
     }
 
-    public SimpleAdapter(ArrayList<String> arrayList) {
+    public SimpleAdapter(ArrayList<String> arrayList, MainActivity applicationContext) {
         this.mArrayList = arrayList;
+        this.mMainActivity = applicationContext;
     }
 
     @Override

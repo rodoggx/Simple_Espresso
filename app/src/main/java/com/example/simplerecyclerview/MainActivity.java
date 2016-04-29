@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mArrayList = new ArrayList<>();
-        mSimpleAdapter = new SimpleAdapter(mArrayList);
+        mSimpleAdapter = new SimpleAdapter(mArrayList, this);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.a_main_recycler);
         mRecyclerView.setAdapter(mSimpleAdapter);
