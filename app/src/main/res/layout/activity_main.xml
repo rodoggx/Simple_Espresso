@@ -17,6 +17,7 @@
         android:text="Hello World!" />
 
     <Button
+        android:id="@+id/a_main_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="doMagic"
