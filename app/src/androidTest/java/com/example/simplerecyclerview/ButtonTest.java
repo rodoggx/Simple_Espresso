@@ -27,6 +27,6 @@ public class ButtonTest {
                 .perform(click());
 
         onView(withId(R.id.a_second_txt))
-                .check(matches(withText("SimpleRecyclerView")));
+                .check(matches(withText("SimpleRecyclerVie")));
     }
 }
