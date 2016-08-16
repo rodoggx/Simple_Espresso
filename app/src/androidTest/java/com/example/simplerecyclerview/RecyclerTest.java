@@ -28,6 +28,6 @@ public class RecyclerTest {
                 .perform(RecyclerViewActions.scrollToPosition(2), RecyclerViewActions.actionOnItemAtPosition(2, click()));
 
         onView(withId(R.id.a_main_text))
-                .check(matches(withText("Cruel!")));
+                .check(matches(withText("Cruel")));
     }
 }
